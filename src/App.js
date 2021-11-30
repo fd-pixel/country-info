@@ -30,13 +30,13 @@ function App() {
   console.log(info);
 
   return (
-    <div>
+    <div className="App">
+      Data of Countries
       <form style={{ margin: "4rem" }} onSubmit={handleSubmit}>
-        Enter Country :
+        Enter Country Name :
         <input type="text" name="country" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
-
       {info?.map((country, index) => (
         <div>
           <p>

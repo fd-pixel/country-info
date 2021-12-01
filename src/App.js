@@ -32,13 +32,13 @@ function App() {
   return (
     <div className="App">
       Data of Countries
-      <form style={{ margin: "4rem" }} onSubmit={handleSubmit}>
+      <form style={{ margin: "2rem" }} onSubmit={handleSubmit}>
         Enter Country Name :
-        <input type="text" name="country" onChange={handleChange} />
+        <input type="text" name="country" onChange={handleChange} autoFocus />
         <button type="submit">Submit</button>
       </form>
       {info?.map((country, index) => (
-        <div>
+        <div className="Main">
           <p>
             {" "}
             {
@@ -49,23 +49,28 @@ function App() {
               />
             }
           </p>
-          Capital of {country?.name?.common}: {country?.capital}
-          {/* <p>
+          <div className="infopart">
+            <div className="Capital">
+              {" "}
+              Capital of {country?.name?.common}: {country?.capital}{" "}
+            </div>
+            {/* <p>
             {" "}
             Languages of {country?.name?.common}: {country?.languages}
           </p> */}
-          <p>
-            {" "}
-            Borders of {country?.name?.common}:
-            {country.borders.map((border, index) => {
-              return (
-                <p>
-                  {" "}
-                  {index + 1}-{border}
-                </p>
-              );
-            })}
-          </p>
+            <p>
+              {" "}
+              Borders of {country?.name?.common}:
+              {country.borders.map((border, index) => {
+                return (
+                  <p>
+                    {" "}
+                    {index + 1}-{border}
+                  </p>
+                );
+              })}
+            </p>
+          </div>
         </div>
       ))}
     </div>
